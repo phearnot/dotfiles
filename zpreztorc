@@ -3,11 +3,6 @@ zstyle ':prezto:*:*' case-sensitive 'no'
 
 # color output
 zstyle ':prezto:*:*' color 'yes'
-zstyle ':prezto:module:utility:ls' color 'no'
-
-export LS_COLORS='di=1;32:fi=0:ln=35:pi=33:so=33:bd=5:cd=5:or=1;95:ex=31'
-export LSCOLORS='cxfxdxdxbxegedabagacad'
-
 
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
@@ -33,14 +28,11 @@ zstyle ':prezto:load' pmodule \
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' keymap 'vi'
 
-
 ## prompt
 zstyle ':prezto:module:prompt' theme 'sorin'
 
-
 # enable ssh-agent forwarding.
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
-
 
 ## terminal
 # set the tab and window titles.
