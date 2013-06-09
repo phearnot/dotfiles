@@ -1,5 +1,5 @@
 # case-sensitivity for completion, history lookup, etc.
-zstyle ':prezto:*:*' case-sensitive 'no'
+zstyle ':prezto:*:*' case-sensitive 'yes'
 
 # color output
 zstyle ':prezto:*:*' color 'yes'
@@ -29,7 +29,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' keymap 'vi'
 
 ## prompt
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'neuland'
 
 # enable ssh-agent forwarding.
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
