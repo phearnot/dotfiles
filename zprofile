@@ -44,10 +44,10 @@ fpath=(
 )
 
 # misc variables
-export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=128m'
-export SBT_OPTS='-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -Dsbt.boot.credentials=/Users/phearnot/.credentials'
-export SBT_CREDENTIALS='/Users/phearnot/.credentials'
-export PLAY_OPTS='-Dsbt.ivy.home=/Users/phearnot/.ivy2'
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -Dsbt.boot.credentials=$HOME/.credentials"
+export SBT_CREDENTIALS="$HOME/.credentials"
+export PLAY_OPTS="-Dsbt.ivy.home=$HOME/.ivy2"
 
 export GREP_COLOR='32;1'
 export GREP_OPTIONS='--color=auto'
