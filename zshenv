@@ -1,12 +1,12 @@
 # osx-specific variables
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
-  export JAVA_HOME="$(/usr/libexec/java_home -v 1.6)"
+  export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
 fi
 
 # editor
 export EDITOR='vim'
-export VISUAL='subl'
+export VISUAL='vim'
 export PAGER='less'
 
 # lang
@@ -33,6 +33,7 @@ cdpath=(
 
 path=(
   $HOME/bin
+  /Applications/Postgres.app/Contents/MacOS/bin
   /usr/local/{bin,sbin}
   $path
 )
@@ -46,3 +47,4 @@ fpath=(
 export MAVEN_OPTS='-Xmx1024m -XX:MaxPermSize=128m'
 export SBT_OPTS='-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -Dsbt.boot.credentials=/Users/phearnot/.credentials'
 export SBT_CREDENTIALS='/Users/phearnot/.credentials'
+export PLAY_OPTS='-Dsbt.ivy.home=/Users/phearnot/.ivy2'
