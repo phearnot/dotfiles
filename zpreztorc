@@ -22,11 +22,12 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
-  'git'
+  'git' \
+  'history-substring-search'
 
 ## editor
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' keymap 'vi'
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 ## prompt
 zstyle ':prezto:module:prompt' theme 'neuland'
@@ -37,3 +38,9 @@ zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 ## terminal
 # set the tab and window titles.
 zstyle ':prezto:module:terminal' auto-title 'yes'
+
+# disable grep colors here so that they could be redefined in zprofile
+zstyle ':prezto:environment:grep' color 'no'
+
+zstyle ':prezto:module:history-substring-search:color' found 'fg=green,bold'
+zstyle ':prezto:module:history-substring-search:color' not-found 'fg=red,bold'
