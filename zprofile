@@ -1,7 +1,7 @@
 # osx-specific variables
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
-  export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
+  export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 fi
 
 # editor
@@ -33,7 +33,7 @@ cdpath=(
 
 path=(
   $HOME/bin
-  /Applications/Postgres.app/Contents/MacOS/bin
+  /Applications/Postgres.app/Contents/Versions/9.3/bin
   /usr/local/{bin,sbin}
   $path
 )
