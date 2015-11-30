@@ -1,7 +1,7 @@
 # osx-specific variables
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
-  export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
+  export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 fi
 
 # editor
@@ -39,8 +39,8 @@ path=(
 )
 
 # misc variables
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
-export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -Dsbt.boot.credentials=$HOME/.credentials"
+export MAVEN_OPTS="-Xmx1024m"
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Dsbt.boot.credentials=$HOME/.credentials"
 export SBT_CREDENTIALS="$HOME/.credentials"
 export PLAY_OPTS="-Dsbt.ivy.home=$HOME/.ivy2"
 
