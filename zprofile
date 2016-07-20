@@ -32,8 +32,8 @@ cdpath=(
 )
 
 path=(
-  $HOME/bin
-  /Applications/Postgres.app/Contents/Versions/9.3/bin
+  $HOME/.dotfiles/bin
+  /Applications/Postgres.app/Contents/Versions/latest/bin
   /usr/local/{bin,sbin}
   $path
 )
