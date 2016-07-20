@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#JAVA_HOME="/Applications/IntelliJ IDEA CE.app/Contents/jre/jdk/Contents/Home/"
+CERTS="ca sub.class1.server.ca sub.class2.server.ca sub.class3.server.ca sub.class4.server.ca"
+
+for CERT in $CERTS; do
+  wget -q https://www.startssl.com/certs/$CERT.crt
+  echo keytool -import -trustcacerts -keystore "$JAVA_HOME/jre/lib/security/cacerts" -storepass changeit -alias $CERT -noprompt -file $CERT.crt
+  #rm -f $CERT.crt
+done

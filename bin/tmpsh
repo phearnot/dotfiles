@@ -1,0 +1,16 @@
+
+#!/bin/bash
+TMPSH_DIR=/tmp/tmpsh.$$
+mkdir $TMPSH_DIR
+for i in "$@"; do
+  if [[ "$i" == http:* || "$i" == https:* ]]; then
+    echo "[get: $i]"
+    (cd "$TMPSH_DIR" && curl -# -O "$i")
+  elif [[ -e "$i" ]]; then
+    cp -rp "$i" $TMPSH_DIR
+  fi
+done
+trap 'rm -rf $TMPSH_DIR' EXIT
+cd $TMPSH_DIR
+export T=$TMPSH_DIR
+$SHELL
