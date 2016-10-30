@@ -4,3 +4,6 @@
 [submodule "prezto"]
 	path = prezto
 	url = git@github.com:sorin-ionescu/prezto.git
+[submodule "docker-zsh-completion"]
+	path = docker-zsh-completion
+	url = git@github.com:felixr/docker-zsh-completion.git
