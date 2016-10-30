@@ -18,7 +18,7 @@ export LC_ALL='en_US.UTF-8'
 typeset -gU cdpath fpath path
 
 # less
-export LESS='-X -F -g -i -M -R -S -w -z-4'
+export LESS='-XFgiMRwz-4'
 
 # Set the Less input preprocessor.
 if (( $+commands[lesspipe.sh] )); then
@@ -33,7 +33,6 @@ cdpath=(
 
 path=(
   $HOME/.dotfiles/bin
-  /Applications/Postgres.app/Contents/Versions/latest/bin
   /usr/local/{bin,sbin}
   $path
 )
@@ -44,5 +43,4 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Dsbt.boot.credentials=$HOME/.cre
 export SBT_CREDENTIALS="$HOME/.credentials"
 export PLAY_OPTS="-Dsbt.ivy.home=$HOME/.ivy2"
 
-export GREP_COLOR='32;1'
-export GREP_OPTIONS='--color=auto'
+export GREP_COLORS='32;1'
