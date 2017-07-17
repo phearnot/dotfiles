@@ -1,7 +1,5 @@
-
 #!/bin/bash
-TMPSH_DIR=/tmp/tmpsh.$$
-mkdir $TMPSH_DIR
+TMPSH_DIR=`mktemp -d`
 for i in "$@"; do
   if [[ "$i" == http:* || "$i" == https:* ]]; then
     echo "[get: $i]"

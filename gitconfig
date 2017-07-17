@@ -2,6 +2,7 @@
     ol = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 
 [alias]
+    pp = pull -p
     st = status --short --branch --untracked-files
     ci = commit
     br = branch
@@ -40,9 +41,9 @@
     autocrlf = input
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
+    path =
 [mergetool "sourcetree"]
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
 [pull]
-	ff = true
+    ff = true

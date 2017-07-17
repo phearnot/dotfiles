@@ -44,3 +44,5 @@ export SBT_CREDENTIALS="$HOME/.credentials"
 export PLAY_OPTS="-Dsbt.ivy.home=$HOME/.ivy2"
 
 export GREP_COLORS='32;1'
+
+alias hl='highlight -O xterm256'
