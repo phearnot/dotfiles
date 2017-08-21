@@ -6,7 +6,7 @@ fi
 
 # editor
 export EDITOR='vim'
-export VISUAL='vim'
+export VISUAL='subl -w'
 export PAGER='less'
 
 # lang
@@ -33,6 +33,7 @@ cdpath=(
 
 path=(
   $HOME/.dotfiles/bin
+  $HOME/bin
   /usr/local/{bin,sbin}
   $path
 )
