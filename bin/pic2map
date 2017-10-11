@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TEMPLATE=`mktemp`
+cat >$TEMPLATE <<EOF
+https://www.google.com/maps/search/?api=1&query=\${EXIF:GPSLatitudeRef}\${EXIF:GPSLatitude},\${EXIF:GPSLongitudeRef}\${EXIF:GPSLongitude}
+EOF
+
+URL=`curl -s $1 | exiftool -q -m -n -c "%.6f" -p $TEMPLATE - | sed -e s/N// -e s/S/-/ -e s/E// -e s/W/-/`
+rm -f $TEMPLATE
+
+open $URL

@@ -47,3 +47,4 @@ export PLAY_OPTS="-Dsbt.ivy.home=$HOME/.ivy2"
 export GREP_COLORS='32;1'
 
 alias hl='highlight -O xterm256'
+alias mvstoretool='java -cp ~/.ivy2/cache/com.h2database/h2-mvstore/jars/h2-mvstore-1.4.196.jar org.h2.mvstore.MVStoreTool'
