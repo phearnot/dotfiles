@@ -1,6 +1,8 @@
 {
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"font_face": "Monoid",
 	"font_size": 10,
 	"save_on_focus_lost": true,
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true
 }

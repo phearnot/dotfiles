@@ -26,6 +26,9 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'docker'
 
+zstyle ':prezto:load' zfunction \
+  'exact-size'
+
 ## editor
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'emacs'

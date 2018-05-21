@@ -1,0 +1,7 @@
+pmodload 'helper'
+
+function exact-size {
+    find $1 -type f -print0 | xargs -0 stat -f%z | awk '{b+=$1} END {print b}'
+}
+
+exact-size $1
