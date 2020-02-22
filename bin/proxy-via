@@ -1,0 +1,24 @@
+#!/bin/sh
+SCRIPTNAME=$(basename "$0")
+SERVICE="Wi-Fi"
+
+if [ $UID -ne 0 ]; then
+    echo "$SCRIPTNAME must be run as root" >& 2
+    exit 1
+fi
+
+if [ -z "$1" ]; then
+    echo "Usage: $SCRIPTNAME hostname" >& 2
+    exit 1
+fi
+
+if [ -z "$SUDO_USER" ]; then
+    echo '$SUDO_USER not set' >&2
+    exit 1
+fi
+
+networksetup -setsocksfirewallproxy "$SERVICE" 127.0.0.1 9050
+echo "Proxying via $1, press ^C to cancel" >&2
+sudo -u "$SUDO_USER" ssh -ND 9050 -o "ControlPath none" "$1"
+networksetup -setsocksfirewallproxystate "$SERVICE" off
+echo "Proxy via $1 disabled" >&2

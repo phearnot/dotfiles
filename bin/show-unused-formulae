@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+INSTALLED_FORMULAE=$(brew ls -1)
+
+for f in $INSTALLED_FORMULAE; do
+  DEP=$(brew uses --installed $f)
+  if [ -z "$DEP" ]; then
+    echo $f
+  fi
+done
