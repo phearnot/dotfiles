@@ -1,0 +1,33 @@
+function wn_process {
+    echo processing "$@"
+    local wn_address=$1
+    case $2 in
+    "height")
+        curl -s $wn_address/blocks/height | jq .height
+    ;;
+    "sh")
+        curl -s $wn_address/debug/stateHash/$3 | jq
+    ;;
+    *)
+    ;;
+    esac
+}
+
+function wn {
+    local wn_address="http://localhost:6869"
+    case $1 in
+    (wn://|wns://)*)
+        wn_address=${1//#wn/http}.wavesnodes.com
+        shift
+    ;;
+    http[s]*://*)
+        wn_address=$1
+        shift
+    ;;
+    *)
+    ;;
+    esac
+    wn_process $wn_address "$@"
+}
+
+wn "$@"

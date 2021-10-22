@@ -1,5 +1,5 @@
 [pretty]
-    ol = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+    ol = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cs) %C(bold blue)<%an>%Creset
 
 [alias]
     pp = pull -p
@@ -8,17 +8,18 @@
     br = branch
     co = checkout
     df = diff
-    lg = log --graph --pretty=ol --date=relative
+    lg = log --graph --date=short --pretty=ol 
     who = shortlog -s --
     h = help
     fix = commit --amend --no-edit
     med = commit --amend --only
-    whatis = show -s --pretty=ol --date=relative
+    whatis = show -s --pretty=ol --date=short
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
     ff = merge --ff-only @{upstream}
     m = merge --no-ff
     rh = reset --hard
     index = diff --staged
+    local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
 
 [color]
     ui = auto
@@ -36,9 +37,14 @@
 [user]
     name = Sergey Nazarov
     email = phearnot@renee.ru
-    signingkey = B747F87DDAA6237D
+    signingkey = 8251461E
 [core]
     excludesfile = ~/.gitignore
     autocrlf = input
 [pull]
     ff = true
+	rebase = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg

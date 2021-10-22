@@ -27,14 +27,16 @@ zstyle ':prezto:load' pmodule \
   'docker'
 
 zstyle ':prezto:load' zfunction \
-  'exact-size'
+  'exact-size' \
+  'csv-range' \
+  'wn'
 
 ## editor
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 ## prompt
-zstyle ':prezto:module:prompt' theme 'neuland'
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 
 # enable ssh-agent forwarding.
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
@@ -42,17 +44,15 @@ zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 ## terminal
 # set the tab and window titles.
 zstyle ':prezto:module:terminal' auto-title 'yes'
-# Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
-
-# Set the window title format.
- zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
-
-# Set the tab title format.
- zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
 # disable grep colors here so that they could be redefined in zprofile
 zstyle ':prezto:environment:grep' color 'no'
 
 zstyle ':prezto:module:history-substring-search:color' found 'fg=green,bold'
 zstyle ':prezto:module:history-substring-search:color' not-found 'fg=red,bold'
+
+## utility
+# disable interactive aliases for cp, ln, mv and rm
+zstyle ':prezto:module:utility' safe-ops 'no'

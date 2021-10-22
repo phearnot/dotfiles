@@ -1,0 +1,8 @@
+pmodload 'helper'
+
+function csv-range {
+    local script="NR==1||(NR>=$1&&NR<=$2){print \$0}"
+    awk $script $3
+}
+
+csv-range $1 $2 $3

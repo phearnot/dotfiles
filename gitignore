@@ -51,7 +51,10 @@ xcuserdata
 ########
 *.iml
 .idea
-
+.bsp
 .venv
+*.sc
 
 .history
+
+sign.scala

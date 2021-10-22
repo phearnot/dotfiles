@@ -1,7 +1,9 @@
 # osx-specific variables
 if [[ "$OSTYPE" == darwin* ]]; then
+  export GPG_TTY=$(tty)
   export BROWSER='open'
-  export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+  export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
+  export YK_FLAGS="-agentpath:$(find /Applications -maxdepth 1 -type d -name 'YourKit*')/Contents/Resources/bin/mac/libyjpagent.dylib=onexit=snapshot,async_sampling_cpu"
 fi
 
 # editor
@@ -38,13 +40,9 @@ path=(
   $path
 )
 
-# misc variables
-export MAVEN_OPTS="-Xmx1024m"
-export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -Dsbt.boot.credentials=$HOME/.credentials"
-export SBT_CREDENTIALS="$HOME/.credentials"
-export PLAY_OPTS="-Dsbt.ivy.home=$HOME/.ivy2"
-
 export GREP_COLORS='32;1'
 
 alias hl='highlight -O xterm256'
-alias mvstoretool='java -cp ~/.ivy2/cache/com.h2database/h2-mvstore/jars/h2-mvstore-1.4.196.jar org.h2.mvstore.MVStoreTool'
+alias ops='eval $(op signin my)'
+
+[ -f $HOME/.zprofile.local ] && . $HOME/.zprofile.local
