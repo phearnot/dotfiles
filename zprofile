@@ -2,7 +2,6 @@
 if [[ "$OSTYPE" == darwin* ]]; then
   export GPG_TTY=$(tty)
   export BROWSER='open'
-  export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
   export YK_FLAGS="-agentpath:$(find /Applications -maxdepth 1 -type d -name 'YourKit*')/Contents/Resources/bin/mac/libyjpagent.dylib=onexit=snapshot,async_sampling_cpu"
 fi
 
@@ -43,6 +42,6 @@ path=(
 export GREP_COLORS='32;1'
 
 alias hl='highlight -O xterm256'
-alias ops='eval $(op signin my)'
+alias ops='eval $(op signin --account my.1password.com)'
 
 [ -f $HOME/.zprofile.local ] && . $HOME/.zprofile.local

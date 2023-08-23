@@ -37,7 +37,7 @@
 [user]
     name = Sergey Nazarov
     email = phearnot@renee.ru
-    signingkey = 8251461E
+    signingkey = 1DDA319E2BB724F6
 [core]
     excludesfile = ~/.gitignore
     autocrlf = input
